@@ -11,14 +11,21 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-import os 
+import os
+import sys
 import environ
 
-env = environ.Env()
-environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Obtener la ruta de la carpeta 'apps'
+APPS_PATH = os.path.join(BASE_DIR, 'apps')
+
+# Agregar la ruta de 'apps' al sys.path
+sys.path.insert(0, APPS_PATH)
+env = environ.Env()
+environ.Env.read_env()
 
 
 # Quick-start development settings - unsuitable for production
@@ -46,7 +53,8 @@ DJANGO_APPS = [
 
 
 PROJECT_APPS=[
-
+    'home',
+    
 ]
 
 # paquetes
