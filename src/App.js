@@ -1,25 +1,22 @@
-import logo from './logo.svg';
+import Error404 from 'containers/errors/error404';
+import Home from 'containers/pages/home'; 
 import './App.css';
-
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Esto organiza todo
+import store from 'store';
+import { Provider } from 'react-redux';
+// Aca se manejan todas las rutas 
+// path='*' indica que si no existe la ruta a la que entramos, mostramos error404
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <><Provider store={store}></Provider><Router>
+      <Routes>
+        <Route path='*' element={<Error404 />} />
+        <Route path='/' element={<Home />} />
+      </Routes>
+
+    </Router></>
+
+  )
 }
 
 export default App;
