@@ -116,8 +116,12 @@ WSGI_APPLICATION = "core.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "BearBeatsDB",
+        'USER': 'postgres',  # Cambia esto por tu usuario de PostgreSQL
+        'PASSWORD': '31416',  # Cambia esto por tu contraseña de PostgreSQL
+        'HOST': 'localhost',  # Cambia esto si tu base de datos está en otro host
+        'PORT': '',  # Si estás utilizando el puerto predeterminado de PostgreSQL (5432), déjalo vacío
     }
 }
 
