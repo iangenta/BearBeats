@@ -2,8 +2,8 @@ import React, { useMemo } from 'react';
 import { HiHome } from 'react-icons/hi';
 import { BiSearch } from 'react-icons/bi';
 import { connect } from 'react-redux';
-import { Box } from './Box'; // 
-import SidebarItem from './SideBarItem';
+import Box from '../Box';
+import SidebarItem from './SideBarItem'; // Corregir el nombre de importación aquí
 import Library from './Library';
 
 function SideBar({ children }) {
